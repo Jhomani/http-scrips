@@ -98,8 +98,10 @@ body = {
 
 # res = req.get('/statistics/discussions/39be0e9f-5b07-4a8e-bddb-63fb5acb3c80', filter)
 
-res = req.get('/statistics/voting/1c89061b-5a2e-495f-822d-e1f7fdb45dd1', filter)
+# res = req.get('/statistics/voting/1c89061b-5a2e-495f-822d-e1f7fdb45dd1', filter)
 
+postsId = '21008feb-4a59-549a-b795-20669f1bfe40'
+res = req.uploadFile('/containers/posts/upload/attached', postsId, '/home/jhomani/Pictures/test.png')
 # res = req.get('/statistics/announcements/4000b5ac-8ef8-4eee-b0ee-5837a7424179', filter)
 
 # res = req.get('/posts/39085293-0a1a-465f-abd5-2685488d1f14/discussion', filter)

@@ -1,5 +1,4 @@
 import requests
-import urllib.parse
 import json
 
 class Fetcher:
@@ -41,6 +40,26 @@ class Fetcher:
       url=path,
       headers=s.headers,
       data=json.dumps(body)
+    ) 
+
+    return fetched.json() 
+
+  def uploadFile(s, url: str, key,  filepath):
+    path = s.server + url
+    files = {key: open(filepath, 'rb')}
+
+    f = open('./token', 'r');
+    token = f.readline();
+    f.close()
+
+    headers = {
+      'authorization': f'Bearer {token}',
+    }
+
+    fetched = requests.post(
+      url=path,
+      headers=headers,
+      files=files
     ) 
 
     return fetched.json() 
