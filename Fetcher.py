@@ -41,6 +41,7 @@ class Fetcher:
       headers=s.headers,
       data=json.dumps(body)
     ) 
+    print(fetched.status_code)
 
     return fetched.json() 
 
@@ -64,6 +65,19 @@ class Fetcher:
 
     return fetched.json() 
 
+  def put(s, url: str, body: dict):
+    path = s.server + url
+
+    fetched = requests.put(
+      url=path,
+      headers=s.headers,
+      data=json.dumps(body)
+    ) 
+
+    print(fetched.status_code)
+
+    return fetched.json() 
+
   def patch(s, url: str, body: dict):
     path = s.server + url
 
@@ -72,6 +86,8 @@ class Fetcher:
       headers=s.headers,
       data=json.dumps(body)
     ) 
+
+    print(fetched.status_code)
 
     return fetched.json() 
 
